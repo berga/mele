@@ -2,11 +2,11 @@
   "name": "react-mele",
   "version": "1.0.0",
   "description": "A tiny library to easily modify React element trees",
-  "main": "build/index.js",
+  "main": "src/mele.js",
   "scripts": {
     "test": "jest",
-		"build": "webpack",
-		"preversion": "test && webpack"
+    "build": "webpack",
+    "preversion": "test && webpack"
   },
   "repository": {
     "type": "git",
@@ -18,9 +18,9 @@
     "url": "https://github.com/dgieselaar/mele/issues"
   },
   "homepage": "https://github.com/dgieselaar/mele#readme",
-	"peerDependencies": {
-		"react": "^15.x"
-	},
+  "peerDependencies": {
+    "react": "^15.x"
+  },
   "devDependencies": {
     "babel-core": "^6.18.2",
     "babel-eslint": "^7.1.0",
@@ -43,11 +43,11 @@
     ],
     "testRegex": "test.js$"
   },
-	"keywords": [
-		"react",
-		"element",
-		"tree",
-		"jquery",
-		"sizzle"
-	]
+  "keywords": [
+    "react",
+    "element",
+    "tree",
+    "jquery",
+    "sizzle"
+  ]
 }

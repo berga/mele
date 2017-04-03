@@ -1,61 +1,44 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // @flow
-import replace from '../cmd/replace';
-import addClass from '../cmd/addClass';
-import removeClass from '../cmd/removeClass';
-import after from '../cmd/after';
-import before from '../cmd/before';
-import append from '../cmd/append';
-import prepend from '../cmd/prepend';
-import prop from '../cmd/prop';
-import removeProp from '../cmd/removeProp';
-import findElements from '../util/findElements';
-import unfreezeElement from '../util/unfreezeElement';
-
-import { Properties } from '../cmd/prop';
-
-export type Themer = {
-	element: () => Object,
-	replace?: (selector:string|Function, replacementFn:Function) => Themer,
-	addClass?: (selector:string|Function, className:string) => Themer,
-	removeClass?: (selector:string|Function, className:string) => Themer,
-	after?: (selector:string|Function, sibling:Object) => Themer,
-	before?: (selector:string|Function, sibling:Object) => Themer,
-	append?: (selector:string|Function, child:Object) => Themer,
-	prepend?: (selector:string|Function, child:Object) => Themer,
-	prop?: (selector:string|Function, properties:Properties|Function) => Themer,
-	removeProp?: (selector:string|Function, propName:string) => Themer
-};
-
-export default (root:any):Themer => {
-	// unfreeze object
-	let rootEl:Object = unfreezeElement(root),
-		wrapper:Themer = {
-			element: ():Object => rootEl
-		},
-		utils = {
-			replace,
-			addClass,
-			removeClass,
-			after,
-			before,
-			append,
-			prepend,
-			prop,
-			removeProp
-		};
-
-	Object.keys(utils)
-		.forEach((key, value) => {
-			let op:Function = utils[key];
-			wrapper[key] = (selector:string|Function, ...rest):any => {
-				rootEl = op(
-					rootEl,
-					findElements(rootEl, selector),
-					...rest
-				);
-				return wrapper;
-			};
-		});
-
-	return wrapper;
+var replace_1 = require("../cmd/replace");
+var addClass_1 = require("../cmd/addClass");
+var removeClass_1 = require("../cmd/removeClass");
+var after_1 = require("../cmd/after");
+var before_1 = require("../cmd/before");
+var append_1 = require("../cmd/append");
+var prepend_1 = require("../cmd/prepend");
+var prop_1 = require("../cmd/prop");
+var removeProp_1 = require("../cmd/removeProp");
+var findElements_1 = require("../util/findElements");
+var unfreezeElement_1 = require("../util/unfreezeElement");
+exports.default = function (root) {
+    // unfreeze object
+    var rootEl = unfreezeElement_1.default(root), wrapper = {
+        element: function () { return rootEl; }
+    }, utils = {
+        replace: replace_1.default,
+        addClass: addClass_1.default,
+        removeClass: removeClass_1.default,
+        after: after_1.default,
+        before: before_1.default,
+        append: append_1.default,
+        prepend: prepend_1.default,
+        prop: prop_1.default,
+        removeProp: removeProp_1.default
+    };
+    Object.keys(utils)
+        .forEach(function (key, value) {
+        var op = utils[key];
+        wrapper[key] = function (selector) {
+            var rest = [];
+            for (var _i = 1; _i < arguments.length; _i++) {
+                rest[_i - 1] = arguments[_i];
+            }
+            rootEl = op.apply(void 0, [rootEl,
+                findElements_1.default(rootEl, selector)].concat(rest));
+            return wrapper;
+        };
+    });
+    return wrapper;
 };

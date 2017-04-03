@@ -72,91 +72,52 @@
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
+	Object.defineProperty(exports, "__esModule", { value: true });
 
-	var _replace = __webpack_require__(3);
-
-	var _replace2 = _interopRequireDefault(_replace);
-
-	var _addClass = __webpack_require__(4);
-
-	var _addClass2 = _interopRequireDefault(_addClass);
-
-	var _removeClass = __webpack_require__(5);
-
-	var _removeClass2 = _interopRequireDefault(_removeClass);
-
-	var _after = __webpack_require__(6);
-
-	var _after2 = _interopRequireDefault(_after);
-
-	var _before = __webpack_require__(7);
-
-	var _before2 = _interopRequireDefault(_before);
-
-	var _append = __webpack_require__(8);
-
-	var _append2 = _interopRequireDefault(_append);
-
-	var _prepend = __webpack_require__(9);
-
-	var _prepend2 = _interopRequireDefault(_prepend);
-
-	var _prop = __webpack_require__(10);
-
-	var _prop2 = _interopRequireDefault(_prop);
-
-	var _removeProp = __webpack_require__(11);
-
-	var _removeProp2 = _interopRequireDefault(_removeProp);
-
-	var _findElements = __webpack_require__(12);
-
-	var _findElements2 = _interopRequireDefault(_findElements);
-
-	var _unfreezeElement = __webpack_require__(16);
-
-	var _unfreezeElement2 = _interopRequireDefault(_unfreezeElement);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+	var replace_1 = __webpack_require__(3);
+	var addClass_1 = __webpack_require__(4);
+	var removeClass_1 = __webpack_require__(5);
+	var after_1 = __webpack_require__(6);
+	var before_1 = __webpack_require__(7);
+	var append_1 = __webpack_require__(8);
+	var prepend_1 = __webpack_require__(9);
+	var prop_1 = __webpack_require__(10);
+	var removeProp_1 = __webpack_require__(11);
+	var findElements_1 = __webpack_require__(12);
+	var unfreezeElement_1 = __webpack_require__(16);
 	exports.default = function (root) {
-		// unfreeze object
-		var rootEl = (0, _unfreezeElement2.default)(root),
-		    wrapper = {
-			element: function element() {
-				return rootEl;
-			}
-		},
-		    utils = {
-			replace: _replace2.default,
-			addClass: _addClass2.default,
-			removeClass: _removeClass2.default,
-			after: _after2.default,
-			before: _before2.default,
-			append: _append2.default,
-			prepend: _prepend2.default,
-			prop: _prop2.default,
-			removeProp: _removeProp2.default
-		};
-
-		Object.keys(utils).forEach(function (key, value) {
-			var op = utils[key];
-			wrapper[key] = function (selector) {
-				for (var _len = arguments.length, rest = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-					rest[_key - 1] = arguments[_key];
-				}
-
-				rootEl = op.apply(undefined, [rootEl, (0, _findElements2.default)(rootEl, selector)].concat(rest));
-				return wrapper;
-			};
-		});
-
-		return wrapper;
+	    // unfreeze object
+	    var rootEl = unfreezeElement_1.default(root),
+	        wrapper = {
+	        element: function element() {
+	            return rootEl;
+	        }
+	    },
+	        utils = {
+	        replace: replace_1.default,
+	        addClass: addClass_1.default,
+	        removeClass: removeClass_1.default,
+	        after: after_1.default,
+	        before: before_1.default,
+	        append: append_1.default,
+	        prepend: prepend_1.default,
+	        prop: prop_1.default,
+	        removeProp: removeProp_1.default
+	    };
+	    Object.keys(utils).forEach(function (key, value) {
+	        var op = utils[key];
+	        wrapper[key] = function (selector) {
+	            var rest = [];
+	            for (var _i = 1; _i < arguments.length; _i++) {
+	                rest[_i - 1] = arguments[_i];
+	            }
+	            rootEl = op.apply(void 0, [rootEl, findElements_1.default(rootEl, selector)].concat(rest));
+	            return wrapper;
+	        };
+	    });
+	    return wrapper;
 	};
 
 /***/ },

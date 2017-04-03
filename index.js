@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('./build/mele');
+module.exports = require('./src/index');

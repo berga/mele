@@ -2,7 +2,7 @@
   "name": "react-mele",
   "version": "1.0.0",
   "description": "A tiny library to easily modify React element trees",
-  "main": "build/mele.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest",
     "build": "webpack",

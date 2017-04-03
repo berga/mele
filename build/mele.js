@@ -1,13 +1,12 @@
-/******/ (function(modules) { // webpackBootstrap
+/******/ (function (modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 
 /******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-
+/******/ 	function __webpack_require__ (moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
-/******/ 			return installedModules[moduleId].exports;
+/******/ 		if (installedModules[moduleId])
+/******/ 			{return installedModules[moduleId].exports;}
 
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
@@ -38,12 +37,9 @@
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
-/******/ })
-/************************************************************************/
-/******/ ([
+/******/ })([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
-
+/***/ function (module, exports, __webpack_require__) {
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -58,20 +54,16 @@
 
 	var _theme2 = _interopRequireDefault(_theme);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _theme2.default;
-
 /***/ },
 /* 1 */
-/***/ function(module, exports) {
-
+/***/ function (module, exports) {
 	module.exports = React;
-
 /***/ },
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
+/***/ function (module, exports, __webpack_require__) {
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -122,13 +114,13 @@
 
 	var _unfreezeElement2 = _interopRequireDefault(_unfreezeElement);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = function (root) {
 		// unfreeze object
 		var rootEl = (0, _unfreezeElement2.default)(root),
 		    wrapper = {
-			element: function element() {
+			element: function element () {
 				return rootEl;
 			}
 		},
@@ -151,18 +143,16 @@
 					rest[_key - 1] = arguments[_key];
 				}
 
-				rootEl = op.apply(undefined, [rootEl, (0, _findElements2.default)(rootEl, selector)].concat(rest));
+				rootEl = op(...[rootEl, (0, _findElements2.default)(rootEl, selector)].concat(rest));
 				return wrapper;
 			};
 		});
 
 		return wrapper;
 	};
-
 /***/ },
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
+/***/ function (module, exports, __webpack_require__) {
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -173,9 +163,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var replace = function replace(root, node, replacementFunction) {
+	var replace = function replace (root, node, replacementFunction) {
 		var parent = node.parent,
 		    replacement = void 0,
 		    children = void 0;
@@ -206,11 +196,9 @@
 			return replace(rt, node, fn);
 		}, root);
 	};
-
 /***/ },
 /* 4 */
-/***/ function(module, exports, __webpack_require__) {
-
+/***/ function (module, exports, __webpack_require__) {
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -221,7 +209,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = function (root, nodes, className) {
 		nodes.forEach(function (node) {
@@ -232,11 +220,9 @@
 
 		return root;
 	};
-
 /***/ },
 /* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
+/***/ function (module, exports, __webpack_require__) {
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -247,7 +233,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = function (root, nodes, className) {
 		nodes.forEach(function (node) {
@@ -262,11 +248,9 @@
 
 		return root;
 	};
-
 /***/ },
 /* 6 */
-/***/ function(module, exports, __webpack_require__) {
-
+/***/ function (module, exports, __webpack_require__) {
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -277,7 +261,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = function (root, nodes, sibling) {
 		nodes.forEach(function (node) {
@@ -294,11 +278,9 @@
 
 		return root;
 	};
-
 /***/ },
 /* 7 */
-/***/ function(module, exports, __webpack_require__) {
-
+/***/ function (module, exports, __webpack_require__) {
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -309,7 +291,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = function (root, nodes, sibling) {
 		nodes.forEach(function (node) {
@@ -326,11 +308,9 @@
 
 		return root;
 	};
-
 /***/ },
 /* 8 */
-/***/ function(module, exports, __webpack_require__) {
-
+/***/ function (module, exports, __webpack_require__) {
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -341,7 +321,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = function (root, nodes, child) {
 		nodes.forEach(function (node) {
@@ -350,11 +330,9 @@
 
 		return root;
 	};
-
 /***/ },
 /* 9 */
-/***/ function(module, exports, __webpack_require__) {
-
+/***/ function (module, exports, __webpack_require__) {
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -365,7 +343,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = function (root, nodes, child) {
 		nodes.forEach(function (node) {
@@ -374,11 +352,9 @@
 
 		return root;
 	};
-
 /***/ },
 /* 10 */
-/***/ function(module, exports) {
-
+/***/ function (module, exports) {
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -398,11 +374,9 @@
 
 		return root;
 	};
-
 /***/ },
 /* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
+/***/ function (module, exports, __webpack_require__) {
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -413,7 +387,7 @@
 
 	var _prop2 = _interopRequireDefault(_prop);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = function (root, nodes, propName) {
 		(0, _prop2.default)(root, nodes, function (props) {
@@ -425,11 +399,9 @@
 		});
 		return root;
 	};
-
 /***/ },
 /* 12 */
-/***/ function(module, exports, __webpack_require__) {
-
+/***/ function (module, exports, __webpack_require__) {
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -444,7 +416,7 @@
 
 	var _getSelector2 = _interopRequireDefault(_getSelector);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//eslint-disableline
 
@@ -453,7 +425,7 @@
 		    matchingFunction = (0, _getSelector2.default)(selector),
 		    parentNode = void 0;
 
-		var inspectElement = function inspectElement(element, index) {
+		var inspectElement = function inspectElement (element, index) {
 			var node = { element: element, parent: parentNode, index: index };
 
 			if (matchingFunction(element)) {
@@ -467,11 +439,9 @@
 
 		return matching;
 	};
-
 /***/ },
 /* 13 */
-/***/ function(module, exports, __webpack_require__) {
-
+/***/ function (module, exports, __webpack_require__) {
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -486,9 +456,9 @@
 
 	var selectors = _interopRequireWildcard(_parseSelector);
 
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+	function _interopRequireWildcard (obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = function (selector) {
 		var type = (0, _getSelectorType2.default)(selector),
@@ -496,11 +466,9 @@
 
 		return matchingFunction;
 	};
-
 /***/ },
 /* 14 */
-/***/ function(module, exports) {
-
+/***/ function (module, exports) {
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
@@ -534,25 +502,23 @@
 
 		return type;
 	};
-
 /***/ },
 /* 15 */
-/***/ function(module, exports) {
-
+/***/ function (module, exports) {
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
 
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	function _defineProperty (obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-	var getErrorMessage = function getErrorMessage(type, selector, regex) {
+	var getErrorMessage = function getErrorMessage (type, selector, regex) {
 		return 'Invalid selector for ' + type + ': ' + selector + ' does not match ' + regex.toString();
 	};
 
 
-	var matchProps = function matchProps(element, props) {
+	var matchProps = function matchProps (element, props) {
 		for (var key in props) {
 			var value = props[key];
 			if (element.props[key] !== value) {
@@ -562,7 +528,7 @@
 		return true;
 	};
 
-	var id = exports.id = function id(selector) {
+	var id = exports.id = function id (selector) {
 		var regex = /^#([^\s]{1,})$/,
 		    matches = selector.match(regex),
 		    id = void 0;
@@ -578,7 +544,7 @@
 		};
 	};
 
-	var className = exports.className = function className(selector) {
+	var className = exports.className = function className (selector) {
 		var regex = /^\.([^\s]{1,})$/,
 		    matches = selector.match(regex),
 		    className = void 0;
@@ -597,7 +563,7 @@
 		};
 	};
 
-	var attribute = exports.attribute = function attribute(selector) {
+	var attribute = exports.attribute = function attribute (selector) {
 		var regex = /^\[([^\s]{1,})=(.*?)\]$/,
 		    matches = selector.match(regex),
 		    name = void 0,
@@ -615,7 +581,7 @@
 		};
 	};
 
-	var tag = exports.tag = function tag(selector) {
+	var tag = exports.tag = function tag (selector) {
 		var regex = /^([\w-]{1,})$/,
 		    matches = selector.match(regex),
 		    name = void 0;
@@ -631,16 +597,14 @@
 		};
 	};
 
-	var type = exports.type = function type(selector) {
+	var type = exports.type = function type (selector) {
 		return function (element) {
 			return element.type === selector;
 		};
 	};
-
 /***/ },
 /* 16 */
-/***/ function(module, exports, __webpack_require__) {
-
+/***/ function (module, exports, __webpack_require__) {
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -651,9 +615,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	function _interopRequireDefault (obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var unfreezeElement = function unfreezeElement(element) {
+	var unfreezeElement = function unfreezeElement (element) {
 		var obj = element;
 
 		// I think React only freezes elements when in dev mode,
@@ -671,6 +635,5 @@
 	};
 
 	exports.default = unfreezeElement;
-
 /***/ }
 /******/ ]);
